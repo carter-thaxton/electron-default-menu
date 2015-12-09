@@ -1,0 +1,12 @@
+{
+  "name": "electron-default-menu",
+  "version": "0.1.0",
+  "description": "Default application menu for Electron apps",
+  "main": "index.js",
+  "keywords": [
+    "electron",
+    "menu"
+  ],
+  "author": "Carter Thaxton",
+  "license": "ISC"
+}
