@@ -19,6 +19,7 @@ var dialog = require('dialog')
 
 app.on('ready', function() {
 
+  // Get template for default menu
   var menu = defaultMenu()
 
   // Add custom menu
@@ -34,6 +35,7 @@ app.on('ready', function() {
     ]
   })
 
+  // Set top-level application menu, using modified template
   Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 })
 
