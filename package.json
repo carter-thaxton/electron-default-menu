@@ -1,6 +1,6 @@
 {
   "name": "electron-default-menu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Default application menu for Electron apps",
   "main": "index.js",
   "keywords": [
@@ -8,5 +8,10 @@
     "menu"
   ],
   "author": "Carter Thaxton",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carter-thaxton/electron-default-menu.git"
+  },
+  "homepage": "http://github.com/carter-thaxton/electron-default-menu"
 }
