@@ -150,7 +150,7 @@ module.exports = function() {
         {
           label: 'Quit',
           accelerator: 'Command+Q',
-          click: app.quit
+          click: function() { app.quit(); }
         },
       ]
     });
