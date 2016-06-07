@@ -1,5 +1,5 @@
-var electron = require('electron')  // this should work if you're in the elctron environment
-var app = electron.app
+var electron = require('electron')  // this should work if you're in the electron environment
+var app = electron.remote.app
 var shell = electron.shell
 
 module.exports = function() {
@@ -57,7 +57,7 @@ module.exports = function() {
         {
           label: 'Toggle Full Screen',
           accelerator: (function() {
-            if (process.platform == 'darwin')
+            if (process.platform === 'darwin')
               return 'Ctrl+Command+F';
             else
               return 'F11';
@@ -70,7 +70,7 @@ module.exports = function() {
         {
           label: 'Toggle Developer Tools',
           accelerator: (function() {
-            if (process.platform == 'darwin')
+            if (process.platform === 'darwin')
               return 'Alt+Command+I';
             else
               return 'Ctrl+Shift+I';
@@ -110,7 +110,7 @@ module.exports = function() {
     },
   ];
 
-  if (process.platform == 'darwin') {
+  if (process.platform === 'darwin') {
     var name = app.getName();
     template.unshift({
       label: name,
