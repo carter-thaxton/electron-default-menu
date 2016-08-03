@@ -1,6 +1,6 @@
 {
   "name": "electron-default-menu",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Default application menu for Electron apps",
   "main": "index.js",
   "keywords": [
