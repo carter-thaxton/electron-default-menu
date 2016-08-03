@@ -1,10 +1,14 @@
-var electron = require('electron')  // this should work if you're in the electron environment
-var app = electron.remote.app
-var shell = electron.shell
+/**
+ * Creates a default menu for electron apps
+ *
+ * @param {Object} app electron.app
+ * @param {Object} shell electron.shell
+ * @returns {Object}  a menu object to be passed to electron.Menu
+ */
 
-module.exports = function() {
+module.exports = function(app, shell) {
 
-  var template = [
+  const template = [
     {
       label: 'Edit',
       submenu: [
@@ -111,7 +115,7 @@ module.exports = function() {
   ];
 
   if (process.platform === 'darwin') {
-    var name = app.getName();
+    const name = app.getName();
     template.unshift({
       label: name,
       submenu: [
@@ -154,7 +158,7 @@ module.exports = function() {
         },
       ]
     });
-    var windowMenu = template.find(function(m) { return m.role === 'window' })
+    const windowMenu = template.find(function(m) { return m.role === 'window' })
     if (windowMenu) {
       windowMenu.submenu.push(
         {
