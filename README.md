@@ -12,9 +12,9 @@ Example usage:
 
 ```javascript
 import electron from 'electron';
-var defaultMenu = require('electron-default-menu');
+const defaultMenu = require('electron-default-menu');
 const { Menu, app, shell } = electron;
-var dialog = require('dialog');
+const dialog = require('dialog');
 
 app.on('ready', () => {
 

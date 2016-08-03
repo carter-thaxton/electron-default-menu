@@ -8,7 +8,7 @@
 
 module.exports = function(app, shell) {
 
-  var template = [
+  const template = [
     {
       label: 'Edit',
       submenu: [
@@ -115,7 +115,7 @@ module.exports = function(app, shell) {
   ];
 
   if (process.platform === 'darwin') {
-    var name = app.getName();
+    const name = app.getName();
     template.unshift({
       label: name,
       submenu: [
@@ -158,7 +158,7 @@ module.exports = function(app, shell) {
         },
       ]
     });
-    var windowMenu = template.find(function(m) { return m.role === 'window' })
+    const windowMenu = template.find(function(m) { return m.role === 'window' })
     if (windowMenu) {
       windowMenu.submenu.push(
         {
