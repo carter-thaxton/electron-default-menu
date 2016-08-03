@@ -1,8 +1,12 @@
-var electron = require('electron')  // this should work if you're in the electron environment
-var app = electron.remote.app
-var shell = electron.shell
+/**
+ * Creates a default menu for electron apps
+ *
+ * @param {Object} app electron.app
+ * @param {Object} shell electron.shell
+ * @returns {Object}  a menu object to be passed to electron.Menu
+ */
 
-module.exports = function() {
+module.exports = function(app, shell) {
 
   var template = [
     {
