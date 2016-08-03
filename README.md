@@ -11,16 +11,15 @@ Must be used from the Electron environment.
 Example usage:
 
 ```javascript
+import electron from 'electron';
+var defaultMenu = require('electron-default-menu');
+const { Menu, app, shell } = electron;
+var dialog = require('dialog');
 
-var defaultMenu = require('electron-default-menu')
-var Menu = require('menu')
-var app = require('app')
-var dialog = require('dialog')
-
-app.on('ready', function() {
+app.on('ready', () => {
 
   // Get template for default menu
-  var menu = defaultMenu()
+  const menu = defaultMenu(app, shell);
 
   // Add custom menu
   menu.splice(4, 0, {
@@ -28,7 +27,7 @@ app.on('ready', function() {
     submenu: [
       {
         label: 'Do something',
-        click: function(item, focusedWindow) {
+        click: (item, focusedWindow) => {
           dialog.showMessageBox({message: 'Do something', buttons: ['OK'] })
         }
       }
