@@ -8,6 +8,10 @@ Like the sample code, it checks the environment, and returns appropriate additio
 
 Must be used from the Electron environment.
 
+Installation:
+
+``` npm install electron-default-menu --save ```
+
 Example usage:
 
 ```javascript
