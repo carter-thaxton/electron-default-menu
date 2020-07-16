@@ -115,7 +115,7 @@ module.exports = function(app, shell) {
   ];
 
   if (process.platform === 'darwin') {
-    const name = app.getName();
+    const { name } = app;
     template.unshift({
       label: name,
       submenu: [
