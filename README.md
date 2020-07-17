@@ -8,17 +8,28 @@ Like the sample code, it checks the environment, and returns appropriate additio
 
 Must be used from the Electron environment.
 
-Example usage:
+## Install
+
+**Install using npm**
+
+```shell
+npm install --save electron-default-menu
+```
+
+**Install using yarn**
+
+```shell
+yarn add electron-default-menu
+```
+
+## Example usage:
 
 ```javascript
-import electron from 'electron';
-const defaultMenu = require('electron-default-menu');
-const { Menu, app, shell } = electron;
-const dialog = require('dialog');
+import { Menu, app, dialog, shell } from 'electron';
+import defaultMenu from 'electron-default-menu';
 
 app.on('ready', () => {
-
-  // Get template for default menu
+  // Get default menu template
   const menu = defaultMenu(app, shell);
 
   // Add custom menu
@@ -28,14 +39,13 @@ app.on('ready', () => {
       {
         label: 'Do something',
         click: (item, focusedWindow) => {
-          dialog.showMessageBox({message: 'Do something', buttons: ['OK'] })
+          dialog.showMessageBox({message: 'Do something', buttons: ['OK'] });
         }
       }
     ]
-  })
+  });
 
-  // Set top-level application menu, using modified template
+  // Set application menu
   Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
-})
-
+});
 ```
